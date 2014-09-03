@@ -1,7 +1,5 @@
 package com.proginy.boot.controller;
 
-import java.util.List;
-
 import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,12 +32,5 @@ public class UserController {
 
         log.info("Get user");
         return users.findOne(id);
-    }
-
-    @RequestMapping("users")
-    public List<User> getUsers(@RequestParam("ids") List<Long> ids) {
-
-        log.info("Get users");
-        return users.findAll(ids);
     }
 }

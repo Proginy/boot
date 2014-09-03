@@ -71,4 +71,5 @@ public class Application extends WebMvcConfigurerAdapter
     {
         registry.addInterceptor(localeChangeInterceptor());
     }
+
 }
