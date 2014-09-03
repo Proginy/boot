@@ -1,0 +1,24 @@
+/PublicApi/target/
+/.project
+/target
+
+# Eclipse
+.settings/
+.project
+.classpath
+.springBeans
+*.class
+.pmd
+
+# Netbeans
+.nbsettings/
+nb-configuration.xml
+nbactions.xml
+
+rebel.xml
+
+# Intellij
+.idea/
+
+# ignore for jrebel config file
+/src/main/resources/rebel.xml
