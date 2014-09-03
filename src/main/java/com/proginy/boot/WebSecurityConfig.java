@@ -37,9 +37,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter
     {
         http
                 .authorizeRequests()
-                .antMatchers("/", "/home", "/css/**", "/js/**").permitAll()
+                .antMatchers("/", "/home", "/login", "/css/**", "/js/**").permitAll()
                 .anyRequest().authenticated();
         http
+                .csrf().disable()
                 .formLogin().failureUrl("/login?error")
                 .defaultSuccessUrl("/")
                 .loginPage("/login")
@@ -49,38 +50,24 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter
                 .permitAll();
     }
 
+    /*
+    @Override
+    protected void configure(AuthenticationManagerBuilder registry) throws Exception
+    {
+        registry.userDetailsService(new UserDetailServiceImpl());
+    }
+
+    @Override
+    public UserDetailsService userDetailsServiceBean()
+    {
+        return new UserDetailServiceImpl();
+    }
+    */
+
+
     @Override
     protected void configure(AuthenticationManagerBuilder registry) throws Exception
     {
         registry.userDetailsService(customUserDetailsService);
     }
-
-    //    @Override
-    //    protected void configure(AuthenticationManagerBuilder auth) throws Exception
-    //    {
-    //        JdbcUserDetailsManager userDetailsService = new JdbcUserDetailsManager();
-    //        userDetailsService.setDataSource(datasource);
-    //        PasswordEncoder encoder = new BCryptPasswordEncoder();
-    //
-    //        auth.userDetailsService(userDetailsService).passwordEncoder(encoder);
-    //        auth.jdbcAuthentication().dataSource(datasource);
-    //
-    //        if (!userDetailsService.userExists("user"))
-    //        {
-    //            //userService.createDefaultUser();
-    //        }
-    //    }
-
-    //    @Configuration
-    //    protected static class AuthenticationConfiguration extends GlobalAuthenticationConfigurerAdapter
-    //    {
-    //
-    //        @Override
-    //        public void init(AuthenticationManagerBuilder auth) throws Exception
-    //        {
-    //            auth
-    //                    .inMemoryAuthentication()
-    //                    .withUser("user").password("password").roles("USER");
-    //        }
-    //    }
 }

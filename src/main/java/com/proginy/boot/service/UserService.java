@@ -2,7 +2,7 @@ package com.proginy.boot.service;
 
 import org.springframework.validation.annotation.Validated;
 
-import com.proginy.boot.domain.entity.User;
+import com.proginy.boot.domain.User;
 
 @Validated
 public interface UserService
@@ -10,5 +10,5 @@ public interface UserService
 
     void createDefaultUser();
 
-    User findByEmail(String email);
+    User findUserByUsername(String username);
 }

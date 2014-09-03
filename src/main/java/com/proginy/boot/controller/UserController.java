@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.proginy.boot.domain.entity.User;
-import com.proginy.boot.domain.repository.UserRepository;
+import com.proginy.boot.domain.User;
+import com.proginy.boot.domain.UserRepository;
 
 
 @RestController
@@ -17,7 +17,7 @@ import com.proginy.boot.domain.repository.UserRepository;
 public class UserController {
 
     @Autowired
-    private UserRepository users;
+    private UserRepository user;
 
     @RequestMapping("test")
     public String test() {
@@ -31,6 +31,6 @@ public class UserController {
     {
 
         log.info("Get user");
-        return users.findOne(id);
+        return user.findById(id);
     }
 }

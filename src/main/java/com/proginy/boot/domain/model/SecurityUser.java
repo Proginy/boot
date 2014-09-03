@@ -1,15 +1,13 @@
-package com.proginy.boot.config;
+package com.proginy.boot.domain.model;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Set;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.proginy.boot.domain.entity.Role;
-import com.proginy.boot.domain.entity.User;
+import com.proginy.boot.domain.User;
 
 public class SecurityUser extends User implements UserDetails
 {
@@ -23,7 +21,7 @@ public class SecurityUser extends User implements UserDetails
             this.setId(user.getId());
             this.setFirstName(user.getFirstName());
             this.setLastName(user.getLastName());
-            this.setEmail(user.getEmail());
+            this.setUsername(user.getUsername());
             this.setPassword(user.getPassword());
             this.setRoles(user.getRoles());
         }
@@ -34,6 +32,7 @@ public class SecurityUser extends User implements UserDetails
     {
 
         Collection<GrantedAuthority> authorities = new ArrayList<>();
+        /*
         Set<Role> userRoles = this.getRoles();
 
         if (userRoles != null)
@@ -44,6 +43,11 @@ public class SecurityUser extends User implements UserDetails
                 authorities.add(authority);
             }
         }
+        */
+
+        SimpleGrantedAuthority authority = new SimpleGrantedAuthority("GUEST");
+        authorities.add(authority);
+
         return authorities;
     }
 
@@ -56,7 +60,7 @@ public class SecurityUser extends User implements UserDetails
     @Override
     public String getUsername()
     {
-        return super.getEmail();
+        return super.getUsername();
     }
 
     @Override

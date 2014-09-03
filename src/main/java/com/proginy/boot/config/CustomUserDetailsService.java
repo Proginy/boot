@@ -6,7 +6,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 
-import com.proginy.boot.domain.entity.User;
+import com.proginy.boot.domain.User;
+import com.proginy.boot.domain.model.SecurityUser;
 import com.proginy.boot.service.UserService;
 
 
@@ -20,7 +21,7 @@ public class CustomUserDetailsService implements UserDetailsService
     @Override
     public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException
     {
-        User user = userService.findByEmail(userName);
+        User user = userService.findUserByUsername(userName);
 
         if (user == null)
         {

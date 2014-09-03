@@ -1,12 +1,10 @@
 package com.proginy.boot.service;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.proginy.boot.domain.entity.User;
-import com.proginy.boot.domain.repository.UserRepository;
+import com.proginy.boot.domain.User;
+import com.proginy.boot.domain.UserRepository;
 
 @Service
 public class UserServiceImpl implements UserService
@@ -16,11 +14,11 @@ public class UserServiceImpl implements UserService
     private UserRepository userRepository;
 
     @Override
-    public User findByEmail(String email)
+    public User findUserByUsername(String username)
     {
-        List<User> users = userRepository.findByEmail(email);
+        User user = userRepository.findByUsername(username);
 
-        return users.get(0);
+        return user;
     }
 
     @Override
