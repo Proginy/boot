@@ -2,7 +2,6 @@
 <configuration debug="true" scan="true" scanPeriod="2 minutes">
 	<property name="LOG_DIR" value="${catalina.base}/logs" />
 	<property name="APP_NAME" value="proginy" />
-	<property name="LOG_FORMAT" value="[%property{HOSTNAME}][%date{ISO8601}][%5level][%C{0}][%marker] - %msg%n" />
 	
 	<jmxConfigurator />
 	
@@ -13,9 +12,6 @@
 			<FileNamePattern>${LOG_DIR}/${APP_NAME}_error.%d{yyyy-MM-dd}.log</FileNamePattern>
 			<maxHistory>2</maxHistory>
 		</rollingPolicy>
-		<encoder>
-			<Pattern>${LOG_FORMAT}</Pattern>
-		</encoder>
 	</appender>
 	
 	<appender name="FILE_APPLICATION_LOG" class="ch.qos.logback.core.rolling.RollingFileAppender">
@@ -24,19 +20,9 @@
 			<FileNamePattern>${LOG_DIR}/${APP_NAME}.%d{yyyy-MM-dd}.log</FileNamePattern>
 			<maxHistory>2</maxHistory>
 		</rollingPolicy>
-		<encoder>
-			<Pattern>${LOG_FORMAT}</Pattern>
-		</encoder>
-	</appender>
-	
-	<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
-		<encoder>
-			<Pattern>${LOG_FORMAT}</Pattern>
-		</encoder>
 	</appender>
 	
 	<root level="warn">
-    	<appender-ref ref="CONSOLE"/>
     	<appender-ref ref="FILE_ERROR_LOG"/>
     	<appender-ref ref="FILE_APPLICATION_LOG"/>
     </root>
