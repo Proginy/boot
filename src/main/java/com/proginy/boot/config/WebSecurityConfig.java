@@ -1,4 +1,4 @@
-package com.proginy.boot;
+package com.proginy.boot.config;
 
 import org.apache.tomcat.jdbc.pool.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;

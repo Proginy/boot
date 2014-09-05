@@ -1,4 +1,4 @@
-package com.proginy.boot;
+package com.proginy.boot.config;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
