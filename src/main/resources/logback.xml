@@ -22,11 +22,7 @@
 		</rollingPolicy>
 	</appender>
 	
-	<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
-	</appender>
-	
 	<root level="warn">
-    	<appender-ref ref="CONSOLE"/>
     	<appender-ref ref="FILE_ERROR_LOG"/>
     	<appender-ref ref="FILE_APPLICATION_LOG"/>
     </root>
