@@ -27,6 +27,7 @@ public class Security extends WebSecurityConfigurerAdapter
                 .antMatchers("/", "/home", "/css/**", "/js/**").permitAll()
                 .anyRequest().authenticated();
         http
+                .csrf().disable()
                 .formLogin().failureUrl("/login?error")
                 .defaultSuccessUrl("/")
                 .loginPage("/login")

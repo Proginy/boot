@@ -1,21 +1,36 @@
 package com.proginy.boot.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.proginy.boot.domain.Role;
+import com.proginy.boot.domain.User;
+import com.proginy.boot.repository.RoleRepository;
+import com.proginy.boot.repository.UserRepository;
+
 @Service
-public class UserServiceImpl
+public class UserServiceImpl implements UserService
 {
 
-    void createDefaultUser()
-    {
-        //        List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
-        //        authorities.add(new SimpleGrantedAuthority("USER"));
-        //        
-        //        User user = new User.Builder()
-        //                .username("user")
-        //                .password("password")
-        //                .build();
+    @Autowired
+    private UserRepository userRepository;
 
-        //ser.setAuthorities(new HashSet<GrantedAuthority>(authorities));
+    @Autowired
+    private RoleRepository roleRepository;
+
+    @Override
+    public User createuser()
+    {
+        Role adminRole = roleRepository.getOne(new Long("1"));
+
+        User adminUser = new User();
+        adminUser.setUsername("admin");
+        adminUser.setFirstName("Ny");
+        adminUser.setLastName("Peang");
+        adminUser.setPassword("password");
+        adminUser.setEnabled(true);
+        adminUser.addToRoles(adminRole);
+
+        return userRepository.save(adminUser);
     }
 }
