@@ -3,20 +3,19 @@ package com.proginy.boot.controller;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
 
 
-@RestController
-@RequestMapping("/api/authentication")
+@Controller
 public class AuthenticationController
 {
 
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public void login()
+    @RequestMapping(value = "/login")
+    public String login()
     {
-        // This method will simply return status 200 if it is not intercepted by Spring Security
+        return "login";
     }
 
     @RequestMapping(value = "/logout", method = RequestMethod.POST)
