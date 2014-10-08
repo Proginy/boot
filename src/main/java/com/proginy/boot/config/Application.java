@@ -39,7 +39,9 @@ public class Application extends WebMvcConfigurerAdapter
 
     public static void main(String[] args)
     {
-        SpringApplication.run(Application.class, args);
+        SpringApplication application = new SpringApplication(Application.class);
+        application.setShowBanner(false);
+        application.run(args);
     }
 
     @Bean
@@ -75,4 +77,5 @@ public class Application extends WebMvcConfigurerAdapter
     {
         registry.addInterceptor(localeChangeInterceptor());
     }
+
 }

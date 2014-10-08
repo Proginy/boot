@@ -19,12 +19,19 @@
 </head>
 <body>
 <div th:replace="fragments/header :: header">...</div>
-
+<div style="height: 30px;"></div>
+<div th:replace="fragments/alert :: alert (type='danger', message=${errorMessage})">...</div>
+<div style="height: 50px;"></div>
 <div class="container">
-	<div layout::fragment="content">
-		<h1 th:text="${title}">Title</h1>
-		<div th:text="${message}">Fake content</div>
-		<div id="created" th:text="${#dates.format(date)}">July 11, 2012 2:17:16 PM CDT</div>
+	<div layout:fragment="content">
+		<h1>Static content for prototyping purposes only</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Praesent scelerisque neque neque, ac elementum quam dignissim interdum.
+          Phasellus et placerat elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Praesent scelerisque neque neque, ac elementum quam dignissim interdum.
+          Phasellus et placerat elit.
+        </p>
 	</div>
 	
 	<div th:replace="fragments/footer :: footer">&copy; 2014 Proginy</div>

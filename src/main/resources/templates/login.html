@@ -1,34 +1,21 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-<title>Login</title>
-<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"
-	href="../../css/bootstrap.min.css" />
-</head>
+<html xmlns:th="http://www.thymeleaf.org" layout:decorator="layouts/main">
 <body onload="document.f.username.focus();">
-	<div class="container">
-		<div class="navbar">
-			<div class="navbar-inner">
-				<a class="brand" href="http://www.thymeleaf.org"> Thymeleaf -
-					Plain </a>
-				<ul class="nav">
-					<li><a th:href="@{/}" href="home.html"> Home </a></li>
-				</ul>
+	<div class="content" layout:fragment="content">
+		<p th:if="${param.logout}" class="alert">You have been logged out</p>
+		<p th:if="${param.error}" class="alert alert-error">There was an error, please try again</p>
+		<h2>Login with Username and Password</h2>
+		<form name="form" th:action="@{/login}" action="/login" method="POST">
+			<div class="form-group">
+				<label for="username">User</label> 
+				<input type="text" id="username" name="username" class="form-control" value="" th:placeholder="#{username}" />
 			</div>
-		</div>
-		<div class="content">
-			<p th:if="${param.logout}" class="alert">You have been logged out</p>
-			<p th:if="${param.error}" class="alert alert-error">There was an error, please try again</p>
-			<h2>Login with Username and Password</h2>
-			<form name="form" th:action="@{/login}" action="/login" method="POST">
-				<fieldset>
-					<input type="text" name="username" value="" th:placeholder="#{username}" />
-					<input type="password" name="password" th:placeholder="#{password}" />
-				</fieldset>
-				<input type="submit" id="login" value="Login"
-					class="btn btn-primary" />
-			</form>
-		</div>
+			<div class="form-group">
+				<label for="password">Password</label> 
+				<input type="password" id="password" name="password" class="form-control" th:placeholder="#{password}" />
+			</div>
+			<button type="submit" id="login" value="Login" class="btn btn-primary">Submit</button>
+		</form>
 	</div>
 </body>
 </html>
