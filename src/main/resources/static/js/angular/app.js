@@ -2,7 +2,7 @@
 
 /* App Module */
 
-var proginyBoot = angular.module('proginyBoot', [
-	    'ngRoute', 
-	    'ui.bootstrap'
-	]);    
+var proginy = angular.module('proginy', [
+    'ngRoute', 
+    'ui.bootstrap'
+]);    

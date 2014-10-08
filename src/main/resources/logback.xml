@@ -27,8 +27,8 @@
     	<appender-ref ref="FILE_APPLICATION_LOG"/>
     </root>
 	
-    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+    <include resource="org/springframework/com.proginy.boot/logging/logback/base.xml"/>
     <logger name="org.springframework.web" level="INFO"/>
     <logger name="org.springframework.jdbc" level="DEBUG"/>
-    <logger name="com.proginy" level="DEBUG"/>
+    <logger name="com.proginy.boot" level="DEBUG"/>
 </configuration> 
