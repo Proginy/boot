@@ -7,5 +7,6 @@ import com.proginy.boot.domain.User;
 @Validated
 public interface UserService
 {
-    User createuser();
+
+    User createUser();
 }

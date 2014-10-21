@@ -51,7 +51,7 @@ public class UserController {
     @RequestMapping(value = "create", method = RequestMethod.POST)
     public HttpEntity<User> createUser()
     {
-        User user = userService.createuser();
+        User user = userService.createUser();
 
         return new ResponseEntity<>(user, HttpStatus.OK);
     }

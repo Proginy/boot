@@ -19,7 +19,7 @@ public class UserServiceImpl implements UserService
     private RoleRepository roleRepository;
 
     @Override
-    public User createuser()
+    public User createUser()
     {
         Role adminRole = roleRepository.getOne(new Long("1"));
 
