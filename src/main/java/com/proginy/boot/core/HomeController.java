@@ -1,4 +1,4 @@
-package com.proginy.boot.controller;
+package com.proginy.boot.core;
 
 import java.util.Date;
 import java.util.Map;

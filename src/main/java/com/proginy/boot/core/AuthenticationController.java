@@ -1,4 +1,4 @@
-package com.proginy.boot.controller;
+package com.proginy.boot.core;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;

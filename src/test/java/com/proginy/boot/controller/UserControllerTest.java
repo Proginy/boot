@@ -16,7 +16,8 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-import com.proginy.boot.repository.UserRepository;
+import com.proginy.boot.core.UserController;
+import com.proginy.boot.domain.repository.UserRepository;
 
 @RunWith(MockitoJUnitRunner.class)
 public class UserControllerTest extends AbstractController

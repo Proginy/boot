@@ -1,4 +1,4 @@
-package com.proginy.boot.domain;
+package com.proginy.boot.domain.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

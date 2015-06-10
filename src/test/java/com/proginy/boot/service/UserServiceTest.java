@@ -10,10 +10,11 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
-import com.proginy.boot.domain.Role;
-import com.proginy.boot.domain.User;
-import com.proginy.boot.repository.RoleRepository;
-import com.proginy.boot.repository.UserRepository;
+import com.proginy.boot.core.UserService;
+import com.proginy.boot.domain.entity.Role;
+import com.proginy.boot.domain.entity.User;
+import com.proginy.boot.domain.repository.RoleRepository;
+import com.proginy.boot.domain.repository.UserRepository;
 
 @RunWith(MockitoJUnitRunner.class)
 public class UserServiceTest
@@ -28,7 +29,7 @@ public class UserServiceTest
     private RoleRepository roleRepository;
 
     @InjectMocks
-    private UserService userService = new UserServiceImpl();
+    private UserService userService = new UserService();
 
     @Test
     public void createUser()

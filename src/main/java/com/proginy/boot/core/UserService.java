@@ -1,15 +1,17 @@
-package com.proginy.boot.service;
+package com.proginy.boot.core;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.annotation.Validated;
 
-import com.proginy.boot.domain.Role;
-import com.proginy.boot.domain.User;
-import com.proginy.boot.repository.RoleRepository;
-import com.proginy.boot.repository.UserRepository;
+import com.proginy.boot.domain.entity.Role;
+import com.proginy.boot.domain.entity.User;
+import com.proginy.boot.domain.repository.RoleRepository;
+import com.proginy.boot.domain.repository.UserRepository;
 
 @Service
-public class UserServiceImpl implements UserService
+@Validated
+public class UserService
 {
 
     @Autowired
@@ -18,7 +20,6 @@ public class UserServiceImpl implements UserService
     @Autowired
     private RoleRepository roleRepository;
 
-    @Override
     public User createUser()
     {
         Role adminRole = roleRepository.getOne(new Long("1"));

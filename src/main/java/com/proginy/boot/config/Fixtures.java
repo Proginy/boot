@@ -8,8 +8,8 @@ import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.core.Ordered;
 import org.springframework.stereotype.Component;
 
-import com.proginy.boot.repository.RoleRepository;
-import com.proginy.boot.repository.UserRepository;
+import com.proginy.boot.domain.repository.RoleRepository;
+import com.proginy.boot.domain.repository.UserRepository;
 
 
 @Component

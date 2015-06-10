@@ -1,4 +1,4 @@
-package com.proginy.boot.domain;
+package com.proginy.boot.domain.entity;
 
 import java.util.HashSet;
 import java.util.Set;

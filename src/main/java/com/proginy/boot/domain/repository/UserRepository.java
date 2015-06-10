@@ -1,8 +1,8 @@
-package com.proginy.boot.repository;
+package com.proginy.boot.domain.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.proginy.boot.domain.User;
+import com.proginy.boot.domain.entity.User;
 
 public interface UserRepository extends JpaRepository<User, Long>
 {

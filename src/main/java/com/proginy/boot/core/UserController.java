@@ -1,4 +1,4 @@
-package com.proginy.boot.controller;
+package com.proginy.boot.core;
 
 import java.util.List;
 
@@ -13,9 +13,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.proginy.boot.domain.User;
-import com.proginy.boot.repository.UserRepository;
-import com.proginy.boot.service.UserService;
+import com.proginy.boot.domain.entity.User;
+import com.proginy.boot.domain.repository.UserRepository;
 
 
 @RestController
